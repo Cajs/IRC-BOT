@@ -5,7 +5,7 @@ My TCL coded IRC bot!
 Owner: Cajs (Cameron Stephen)
 
 ## Prerequisites 
-    You will want to install:
+You will want to install:
     
     tcl, tcl-dev, tcl8.6 and tcl8.6-dev
 

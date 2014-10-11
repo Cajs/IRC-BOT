@@ -5,9 +5,8 @@ My TCL coded IRC bot!
 Owner: Cajs (Cameron Stephen)
 
 ## Prerequisites 
-You will want to install:
-    
-    tcl, tcl-dev, tcl8.6 and tcl8.6-dev
+From Debian / Ubuntu:
+    $ sudo apt-get install tcl tcl-dev tcl8.6 tcl8.6-dev
 
 ## License
 

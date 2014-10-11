@@ -6,10 +6,13 @@ Owner: Cajs (Cameron Stephen)
 
 ## Prerequisites 
 From Debian / Ubuntu:  
+    ```
     $ sudo apt-get install tcl tcl-dev tcl8.6 tcl8.6-dev  
+    ```
 From Red Hat:  
+    ```
     $ sudo yum install tcl tcl-devel  
-  
+    ```  
 
 ## License
 

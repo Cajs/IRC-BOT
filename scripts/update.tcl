@@ -3,13 +3,13 @@ bind pub - "!restart" IRCBOT:command:restart
 
 # Rehash
 proc IRCBOT:command:rehash {n u h c t} {
-	if {![matchattr $h o|o]} {noauth $n; return 0}
+	if {![matchattr $h o|o]} {noauth $n; return "No access"}
 	rehash
 	notice $n "Rehashed!"
 }
 # Restart
 proc IRCBOT:command:restart {n u h c t} {
-	if {![matchattr $h o|o]} {noauth $n; return 0}
+	if {![matchattr $h o|o]} {noauth $n; return "No access"}
 	restart
 }
 
@@ -18,7 +18,7 @@ bind pub - "?pull" IRCBOT:command:gitpull
 bind pub - "?push" IRCBOT:command:gitpush
 
 proc IRCBOT:command:gitpush {n u h c t} {
-	if {![matchattr $h o|o $n]} {noauth $n; return 0}
+	if {![matchattr $h o|o $n]} {noauth $n; return "No access"}
 	upload "Requested by $n."
 }
 proc upload {msg} {
@@ -54,7 +54,7 @@ proc gitpushonly {file msg} {
 	}
 }
 proc IRCBOT:command:gitpull {n u h c t} {
-	if {![matchattr $h o|o $c]} {noauth $n; return 0}
+	if {![matchattr $h o|o $c]} {noauth $n; return "No access"}
 	set return [gitfetch]
 	notice $n "-- Fetch --"
 	foreach line [split $return "\n"] {

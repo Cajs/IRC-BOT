@@ -33,27 +33,27 @@ proc upload {msg} {
 }
 proc gitpush {} {
     global bot
-	catch {[exec cd $bot(resources) && git push origin master]} push
+	catch {[cd /home/ircbot/IRCBot/resources; exec git push origin master]} push
 	return $push
 }
 proc gitpull {} {
     global bot
-	catch {[exec cd $bot(resources) && git pull origin master]} pull
+	catch {[cd $bot(resources); exec git pull origin master]} pull
 	return $pull
 }
 proc gitcommit {msg} {
     global bot
-	catch {[exec cd $bot(resources) && git commit --all --message=$msg]} commit
+	catch {[cd $bot(resources); exec git commit --all --message=$msg]} commit
 	return $commit
 }
 proc gitfetch {} {
     global bot
-	catch {[exec cd $bot(resources) && git fetch origin master]} fetch
+	catch {[cd $bot(resources); exec git fetch origin master]} fetch
 	return $fetch
 }
 proc gitpushonly {file msg} {
     global bot
-	catch {[exec cd $bot(resources) && git commit -m $msg $file]} commit
+	catch {[cd $bot(resources); exec git commit -m $msg $file]} commit
 	if {"no changes added to commit" ni [split $commit "\n"]} {
 		gitpush
 	}

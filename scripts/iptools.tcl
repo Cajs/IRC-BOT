@@ -135,7 +135,8 @@ proc IRCBOT:command:host {nick host hand chan text} {
         # Check for A record's
         if {[regexp {^.* has address [A-Za-z0-9 _.:-]*$} $sline]} {
             lappend A [lindex [split [lindex $sline end] /] 0],
-            set isA "1"          
+            set isA "1"
+            set isRecord "1"
         }
     
 		# Check for AAAA record's

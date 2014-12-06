@@ -5,7 +5,7 @@ bind pub - "!restart" IRCBOT:command:restart
 proc IRCBOT:command:rehash {n u h c t} {
 	if {![matchattr $h o|o]} {noauth $n; return "No access"}
 	rehash
-	notice $n "Rehashed!"
+	putnotc $n "Rehashed!"
 }
 # Restart
 proc IRCBOT:command:restart {n u h c t} {
@@ -56,14 +56,14 @@ proc gitpushonly {file msg} {
 proc IRCBOT:command:gitpull {n u h c t} {
 	if {![matchattr $h o|o $c]} {noauth $n; return "No access"}
 	set return [gitfetch]
-	notice $n "-- Fetch --"
+	putnotc $n "-- Fetch --"
 	foreach line [split $return "\n"] {
-		notice $n $line
+		putnotc $n $line
 	}
 	set ret [gitpull]
-	notice $n "-- Pull --"
+	putnotc $n "-- Pull --"
 	foreach line [split $return "\n"] {
-		notice $n $line
+		putnotc $n $line
 	}
 }
 

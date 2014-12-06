@@ -4,6 +4,7 @@ set bot(scripts) "/home/ircbot/IRCBot/resources/scripts"
 set scripts {
 	"iptools.tcl"
     "update.tcl"
+    "ansi.tcl"
 }
 foreach file $scripts {
 	source "$bot(scripts)/$file"

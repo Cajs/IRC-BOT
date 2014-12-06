@@ -1,3 +1,8 @@
+#====================================================================================================#
+#                                                Revisions
+# 1. 6th December [06/12/2014] - Initial upload of ANSI formatting code.
+#====================================================================================================#
+
 proc ansi {arg} {
 	set split [split $arg ""]
 	set return ""
@@ -83,3 +88,6 @@ proc ansi_getcolor {code} {
 		7 {return 00}
 	}
 }
+
+# Send message to log to show file was loaded on start-up
+putlog "ansi.tcl loaded"

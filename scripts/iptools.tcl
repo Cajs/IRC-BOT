@@ -87,3 +87,7 @@ proc IRCBOT:command:port {nick host hand chan text} {
         putserv "PRIVMSG $chan :! = [ansi $failed]"
     }
 }
+
+
+# Send message to log to show file was loaded on start-up
+putlog "iptools.tcl loaded"

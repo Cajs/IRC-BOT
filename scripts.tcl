@@ -8,3 +8,6 @@ set scripts {
 foreach file $scripts {
 	source "$bot(scripts)/$file"
 }
+
+# Send message to log to show file was loaded on start-up
+putlog "scripts.tcl loaded"

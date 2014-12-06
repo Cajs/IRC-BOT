@@ -66,3 +66,6 @@ proc IRCBOT:command:gitpull {n u h c t} {
 		notice $n $line
 	}
 }
+
+# Send message to log to show file was loaded on start-up
+putlog "update.tcl loaded"

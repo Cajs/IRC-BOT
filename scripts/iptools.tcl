@@ -2,7 +2,8 @@
 #                                                Revisions
 # 1. 3rd December [03/12/2014] - Initial upload of !port code.
 # 2. 3rd December [03/12/2014] - Condense code.
-# 3. 6th December [06/12/2014] - Initial upload of !host code
+# 3. 6th December [06/12/2014] - Initial upload of !host code.
+# 4. 6th December [06/12/2014] - Adjust message rate to 2 lines per second.
 #====================================================================================================#
 
 # Define Binds (Alter the trigger commands here)
@@ -11,7 +12,7 @@ bind pub - "!host" IRCBOT:command:host
 
 proc IRCBOT:command:port {nick host hand chan text} {
     # Define message rate
-    set msg-rate 0
+    set msg-rate 2
 
     #Define switches
     set isopen "0"
@@ -89,7 +90,7 @@ proc IRCBOT:command:port {nick host hand chan text} {
 
 proc IRCBOT:command:host {nick host hand chan text} {
     # Define message rate
-    set msg-rate 0
+    set msg-rate 2
     
     #Define switches
     set isRecord "0"

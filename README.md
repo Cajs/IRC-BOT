@@ -1,19 +1,23 @@
 IRC-BOT
 =======
-My TCL coded IRC bot!
+A TCL coded Modular IRC bot!
 
 Owner: Cajs (Cameron Stephen)
 
 ## Prerequisites 
-From Debian / Ubuntu:  
-    ```
-    $ sudo apt-get install tcl tcl-dev tcl8.6 tcl8.6-dev  
-    ```
+
+For all modules:
+    From Debian / Ubuntu:  
+        ```
+        $ sudo apt-get install tcl tcl-dev tcl8.6 tcl8.6-dev  
+        ```
     
-From Red Hat:  
-    ```
-    $ sudo yum install tcl tcl-devel  
-    ```  
+    From Red Hat:  
+        ```
+        $ sudo yum install tcl tcl-devel  
+        ```  
+
+Please note some modules will require other system packages. For specific modules please see the Prerequisites.txt file.
 
 ## License
 

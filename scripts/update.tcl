@@ -14,6 +14,7 @@ proc IRCBOT:command:rehash {n u h c t} {
 	if {![matchattr $h o|o]} {noauth $n; return "No access"}
 	rehash
 	putnotc $n "Rehashed!"
+    return 1
 }
 # Restart
 proc IRCBOT:command:restart {n u h c t} {
@@ -74,6 +75,7 @@ proc IRCBOT:command:gitpull {n u h c t} {
 	foreach line [split $return "\n"] {
 		putnotc $n $line
 	}
+    return 1
 }
 
 # Send message to log to show file was loaded on start-up

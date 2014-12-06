@@ -11,15 +11,16 @@ bind pub - "!push" IRCBOT:command:gitpush
 
 # Rehash
 proc IRCBOT:command:rehash {n u h c t} {
+    global bot
 	if {![matchattr $h o|o]} {noauth $n; return "No access"}
-	rehash
+	cd $bot(eggdrop); rehash
 	putnotc $n "Rehashed!"
-    return 1
 }
 # Restart
 proc IRCBOT:command:restart {n u h c t} {
+    global bot
 	if {![matchattr $h o|o]} {noauth $n; return "No access"}
-	restart
+    cd $bot(eggdrop); restart
 }
 
 proc IRCBOT:command:gitpush {n u h c t} {

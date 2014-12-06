@@ -10,9 +10,7 @@ bind pub - "!port" IRCBOT:command:port
 proc IRCBOT:command:port {nick host hand chan text} {
     # Define message rate
     set msg-rate 0
-    # Obtain username of bot
-    set ctx [getctx]
-    
+
     #Define switches
     set isopen "0"
     set isfiltered "0"

@@ -1,8 +1,10 @@
-# Revisions
-# 3rd December [03/12/2014] - Initial upload of !port code.
-# 3rd December [03/12/2014] - Condense code.
+#====================================================================================================#
+#                                                Revisions
+# 1. 3rd December [03/12/2014] - Initial upload of !port code.
+# 2. 3rd December [03/12/2014] - Condense code.
+#====================================================================================================#
 
-
+# Define Binds (Alter the trigger commands here)
 bind pub - "!port" IRCBOT:command:port
 
 proc IRCBOT:command:port {nick host hand chan text} {

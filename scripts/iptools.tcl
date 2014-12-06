@@ -37,7 +37,6 @@ proc IRCBOT:command:port {nick host hand chan text} {
         set arg "exec nmap $text --system-dns --host-timeout 60000ms"
     }
     catch {eval $arg} result
-    setctx $ctx
     if {$result == ""} { set result "Return: NULL" }
     foreach sline [split $result \n] {
         if {[regexp {^([0-9]*)\/tcp[\s]*open[\s]*[A-z0-9\-\/]*$} $sline]} {

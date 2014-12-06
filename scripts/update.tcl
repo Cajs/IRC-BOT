@@ -14,8 +14,8 @@ proc IRCBOT:command:restart {n u h c t} {
 }
 
 # Update from git
-bind pub - "?pull" IRCBOT:command:gitpull
-bind pub - "?push" IRCBOT:command:gitpush
+bind pub - "!pull" IRCBOT:command:gitpull
+bind pub - "!push" IRCBOT:command:gitpush
 
 proc IRCBOT:command:gitpush {n u h c t} {
 	if {![matchattr $h o|o $n]} {noauth $n; return "No access"}

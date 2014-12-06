@@ -32,23 +32,28 @@ proc upload {msg} {
 	}
 }
 proc gitpush {} {
-	catch {[exec cd $path(resources) && git push origin master]} push
+    global bot
+	catch {[exec cd $bot(resources) && git push origin master]} push
 	return $push
 }
 proc gitpull {} {
-	catch {[exec git pull origin master]} pull
+    global bot
+	catch {[exec cd $bot(resources) && git pull origin master]} pull
 	return $pull
 }
 proc gitcommit {msg} {
-	catch {[exec cd $path(resources) && git commit --all --message=$msg]} commit
+    global bot
+	catch {[exec cd $bot(resources) && git commit --all --message=$msg]} commit
 	return $commit
 }
 proc gitfetch {} {
-	catch {[exec cd $path(resources) && git fetch origin master]} fetch
+    global bot
+	catch {[exec cd $bot(resources) && git fetch origin master]} fetch
 	return $fetch
 }
 proc gitpushonly {file msg} {
-	catch {[exec cd $path(resources) && git commit -m $msg $file]} commit
+    global bot
+	catch {[exec cd $bot(resources) && git commit -m $msg $file]} commit
 	if {"no changes added to commit" ni [split $commit "\n"]} {
 		gitpush
 	}
